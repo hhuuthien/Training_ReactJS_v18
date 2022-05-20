@@ -1,11 +1,12 @@
 // router
 import { createBrowserHistory } from "history";
-import { Route, Router, Switch } from "react-router-dom";
+import { Router, Switch } from "react-router-dom";
 import "./App.css";
-import HeaderHome from "./components/HeaderHome";
-import DemoHOC from "./pages/DemoHOC";
 import HomePage from "./pages/HomePage";
+import HomePageMobile from "./pages/HomePageMobile";
 import { HomeTemplate } from "./templates/HomeTemplate";
+
+import "../src/assets/styles/index.scss";
 
 export const history = createBrowserHistory();
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <Router history={history}>
       <Switch>
-        <HomeTemplate path={"/"} component={HomePage} />
+        <HomeTemplate path={"/home"} component={<HomePage />} componentMobile={<HomePageMobile />} />
       </Switch>
     </Router>
   );
