@@ -3,6 +3,46 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+$c-primary: #2a73dd;
+$c-light: #f5f9fe;
+
+$text-xs: 14px;
+$text-base: 16px;
+$text-md: 18px;
+$text-xl: 25px;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-bold: bold;
+
+@mixin render-text($c, $fs) {
+  color: $c;
+  font-size: $fs;
+}
+
+@mixin render-button($bgcolor, $color) {
+  margin: 10px;
+  padding: 20px 50px;
+  outline: none;
+  border: 2px solid $c-primary;
+  border-radius: 10px;
+  background-color: $bgcolor;
+  color: $color;
+  font-size: $text-base;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  i {
+    margin-right: 8px;
+  }
+
+  &:hover {
+    background-color: $color;
+    color: $bgcolor;
+  }
 }
 
 .container {
@@ -12,35 +52,46 @@
 }
 
 header {
+  background-color: $c-light;
+  height: 70px;
+  box-shadow: 0 2px 4px #e2ebfc;
+
   .container {
+    height: 70px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .logo {
-      color: aqua;
-      font-size: 30px;
+      color: $c-primary;
+      font-size: $text-xl;
+      font-weight: $fw-bold;
     }
 
     nav {
       a {
         font-size: 16px;
         margin: 15px;
-        padding: 15px;
+        padding: 5px;
         text-decoration: none;
         position: relative;
+        color: $c-primary;
+
         &::before {
           content: "";
           width: 100%;
           height: 3px;
-          background-color: red;
+          background-color: $c-primary;
           position: absolute;
           bottom: -10px;
           left: 0;
           transform: scale(0, 1);
           transition: all 0.3s ease;
         }
+
         &:hover {
-          color: red;
+          color: $c-primary;
+
           &::before {
             transform: scale(1, 1);
           }
@@ -49,3 +100,37 @@ header {
     }
   }
 }
+
+.carousel {
+  background-color: $c-light;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    min-height: 800px;
+
+    .col-6 {
+      width: 50%;
+      div {
+        h1 {
+        }
+        h3 {
+        }
+        p {
+          @include render-text($c-primary, $text-xl);
+        }
+        .btn-info {
+          @include render-button(white, $c-primary);
+        }
+        .btn-shop {
+          @include render-button($c-primary, white);
+        }
+
+        img {
+        }
+      }
+    }
+  }
+}
+
+//mixin giống hàm trong js, có thể tái sử dụng và truyền được tham số
