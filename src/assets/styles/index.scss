@@ -134,3 +134,287 @@ header {
 }
 
 //mixin giống hàm trong js, có thể tái sử dụng và truyền được tham số
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/*Khai báo biến*/
+$c-primary: #2a73dd;
+$c-dark: #000;
+$c-light: #fff;
+$c-warning: rgb(251, 177, 86);
+$c1-shadow: #e2ebfc;
+
+$c1-bg: black;
+$c2-bg: #f5f9fe;
+$c3-bg-primary: #2a73dd;
+
+$text-xs: 14px;
+$text-base: 16px;
+$text-md: 18px;
+$text-xl: 20px;
+$text-2xl: 30px;
+$text-3xl: 40px;
+$text-4xl: 50px;
+$text-5xl: 60px;
+$text-6xl: 70px;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-semibold: 700;
+$fw-bold: 900;
+
+//mixin giống hàm trong js có thể tái sử dụng và truyền được tham số
+
+@mixin render-text($fz: $text-base, $fw: $fw-regular, $c: $c-dark) {
+  font-size: $fz;
+  font-weight: $fw;
+  color: $c;
+}
+
+@mixin render-button($bg, $pd, $bd, $br, $fz, $fw, $c, $bg-hover, $c-hover) {
+  background: $bg;
+  padding: $pd;
+  border: $bd;
+  border-radius: $br;
+  cursor: pointer;
+  @include render-text($fz, $fw, $c);
+
+  &:hover {
+    background-color: $bg-hover;
+    color: $c-hover;
+  }
+}
+
+header {
+  padding: 15px;
+  background-color: $c2-bg;
+  box-shadow: 0 2px 4px $c1-shadow;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      color: $c-primary;
+      font-size: 30px;
+      font-weight: $fw-bold;
+      text-decoration: none;
+    }
+
+    nav {
+      a {
+        font-size: $text-base;
+        margin: 15px;
+        color: $c1-bg;
+        text-decoration: none;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 3px;
+          background-color: $c-primary;
+          display: block;
+          bottom: -15px;
+          left: 0;
+          transform: scale(0, 1);
+          transition: all 0.3s;
+        }
+
+        &:hover {
+          color: $c-primary;
+
+          &::before {
+            transform: scale(1, 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.carousel {
+  margin-top: 3px;
+  background: url("../image/product-header-bg.jpg");
+
+  .row {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 800px;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    .col-6 {
+      width: 50%;
+
+      .text-carousel {
+        padding-left: 30%;
+
+        h1 {
+          width: auto;
+          // font-size: $text-6xl;
+          // font-weight: $fw-semibold;
+          // color: $c-primary;
+          @include render-text($text-6xl, $fw-semibold, $c-primary);
+        }
+
+        h3 {
+          // color: $c-dark;
+          // font-weight: $fw-light;
+          // font-size: $text-2xl;
+          @include render-text($c-dark, $fw-light, $text-2xl);
+        }
+
+        p {
+          // color: #000;
+          // font-weight: $fw-light;
+          // font-size: $text-base;
+          // @include render-text($c-dark,$fw-light ,$text-base);
+          @include render-text();
+        }
+
+        .button-shop {
+          margin-top: 15px;
+
+          .btn-info {
+            // background: transparent;
+            // padding: 13.5px 44px;
+            // border: 2px solid #2a73dd;
+            // border-radius: 8px;
+            // font-size: 14px;
+            // font-weight: 600;
+            // color: #2a73dd;
+            @include render-button(transparent, 13.5px 44px, 2px solid #2a73dd, 8px, $text-xs, $fw-semibold, $c-primary, $c3-bg-primary, $c-light);
+            box-shadow: 0 3px 6px #c9d8f4;
+            transition: 0.5s;
+            letter-spacing: 0.03rem;
+          }
+
+          .btn-shop {
+            margin-left: 5px;
+            @include render-button($c3-bg-primary, 13.5px 44px, 2px solid #2a73dd, 8px, $text-xs, $fw-semibold, $c-light, $c3-bg-primary, $c-light);
+          }
+        }
+      }
+    }
+
+    .div-img {
+      width: 50%;
+      text-align: center;
+
+      img {
+        max-width: 100%;
+        // object-fit: contain;
+      }
+    }
+  }
+}
+
+.product-list {
+  h2 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    @include render-text($text-3xl, $fw-bold, $c-dark);
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    .col {
+      width: calc(100% / 3);
+
+      @media screen and (max-width: 1200px) {
+        width: 100%;
+      }
+
+      .card {
+        box-shadow: 6px 6px 12px #e2ebfc;
+        padding: 30px;
+        margin-bottom: 30px;
+
+        img {
+          width: 100%;
+        }
+
+        .card-body {
+          .prod-info {
+            display: flex;
+            justify-content: space-between;
+
+            .product-name {
+              @include render-text($text-base, $fw-semibold, $c-dark);
+
+              .desc {
+                @include render-text($text-base, $fw-light, $c-dark);
+              }
+            }
+
+            .prod-price {
+              @include render-text($text-base, $fw-semibold, $c-dark);
+            }
+          }
+
+          .prod-ratting {
+            display: flex;
+            justify-content: space-between;
+
+            .ratting {
+              i {
+                color: $c-warning;
+              }
+            }
+
+            .prod-button {
+              button {
+                background: #f5f9fe;
+                @include render-button(#f5f9fe, 8px 20px, none, border-radius, $text-xs, $fw-semibold, #2a73dd, #f5f9fe, #2a73dd);
+                transition: 0.5s;
+                box-shadow: 2px 2px 4px #e2ebfc, -2px -2px 4px #fff;
+                letter-spacing: 0.03rem;
+
+                i {
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @for $i from 1 to 7 {
+        .card-item-#{$i} {
+          animation: fadeInDown;
+          animation-duration: 1s * $i;
+        }
+      }
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      transform: translateY(-200px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+}
+
+// nav a:hover::before

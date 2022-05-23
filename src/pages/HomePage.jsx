@@ -52,6 +52,182 @@ export default function HomePage(props) {
           </div>
         </div>
       </section>
+
+      <section className="product-list">
+        <div className="container">
+          <h2>-Featured Products-</h2>
+          <div className="row">
+            <div className="col">
+              <div className="card card-item-1">
+                <img src="./image/product1.png" alt="..." />
+                <div className="card-body">
+                  <div className="prod-info">
+                    <p className="product-name">
+                      CyberBeats
+                      <p className="desc">Accessories</p>
+                    </p>
+                    <p className="prod-price">$99.00</p>
+                  </div>
+                  <div className="prod-ratting">
+                    <div className="ratting">
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                    </div>
+                    <div className="prod-button">
+                      <button className="btn-buy">
+                        <i className="fa fa-shopping-cart"></i> Buy now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card card-item-2">
+                <img src="./image/product2.png" alt="..." />
+                <div className="card-body">
+                  <div className="prod-info">
+                    <p className="product-name">
+                      CyberBeats
+                      <p className="desc">Accessories</p>
+                    </p>
+                    <p className="prod-price">$99.00</p>
+                  </div>
+                  <div className="prod-ratting">
+                    <div className="ratting">
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                    </div>
+                    <div className="prod-button">
+                      <button>
+                        <i className="fa fa-shopping-cart"></i> Buy now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card card-item-3">
+                <img src="./image/product3.png" alt="..." />
+                <div className="card-body">
+                  <div className="prod-info">
+                    <p className="product-name">
+                      CyberBeats
+                      <p className="desc">Accessories</p>
+                    </p>
+                    <p className="prod-price">$99.00</p>
+                  </div>
+                  <div className="prod-ratting">
+                    <div className="ratting">
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                    </div>
+                    <div className="prod-button">
+                      <button>
+                        <i className="fa fa-shopping-cart"></i> Buy now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card card-item-4">
+                <img src="./image/product1.png" alt="..." />
+                <div className="card-body">
+                  <div className="prod-info">
+                    <p className="product-name">
+                      CyberBeats
+                      <p className="desc">Accessories</p>
+                    </p>
+                    <p className="prod-price">$99.00</p>
+                  </div>
+                  <div className="prod-ratting">
+                    <div className="ratting">
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                    </div>
+                    <div className="prod-button">
+                      <button className="btn-buy">
+                        <i className="fa fa-shopping-cart"></i> Buy now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card card-item-5">
+                <img src="./image/product2.png" alt="..." />
+                <div className="card-body">
+                  <div className="prod-info">
+                    <p className="product-name">
+                      CyberBeats
+                      <p className="desc">Accessories</p>
+                    </p>
+                    <p className="prod-price">$99.00</p>
+                  </div>
+                  <div className="prod-ratting">
+                    <div className="ratting">
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                    </div>
+                    <div className="prod-button">
+                      <button>
+                        <i className="fa fa-shopping-cart"></i> Buy now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card card-item-6">
+                <img src="./image/product3.png" alt="..." />
+                <div className="card-body">
+                  <div className="prod-info">
+                    <p className="product-name">
+                      CyberBeats
+                      <p className="desc">Accessories</p>
+                    </p>
+                    <p className="prod-price">$99.00</p>
+                  </div>
+                  <div className="prod-ratting">
+                    <div className="ratting">
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                    </div>
+                    <div className="prod-button">
+                      <button>
+                        <i className="fa fa-shopping-cart"></i> Buy now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
